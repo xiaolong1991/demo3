@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>demo</title>
+<meta content="xxxx" name="description">
+<meta content="xxxx" name="keywords">
+<meta charset="utf-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+<!--相对路径代码 -->
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<script src="js/jquery-1.7.2.min.js"></script>
+<!--插入flash的js代码-->
+
+</head>
+
+<!--定义在ipad以下的屏幕直接跳转到info.htm页面-->
+<script type="text/javascript">
+function browserRedirect() { 
+var sUserAgent= navigator.userAgent.toLowerCase(); 
+var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+window.location.href= 'info.html '; //此处修改在移动设备下所跳转的网页链接地址
+} else { 
+} 
+} 
+browserRedirect(); 
+</script>
+<!--定义在ipad以下的屏幕直接跳转到info.html页面 end-->
+
+<body>
+
+<embed src="images/index.swf" quality="high" type="application/x-shockwave-flash" width="100%" id="flash" >
+<script type="text/javascript">
+//swfobject.embedSWF("images/index.swf", "mymovie", "100%", "710", "6", "#fff");
+
+
+$(window).resize(function(){
+    $('#flash').css('height', $(window).height());
+}).resize();
+
+</script>
+
+</body>
+
+</html>
